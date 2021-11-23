@@ -40,7 +40,7 @@ You can use test_process.csv to test the ability of the model you have trained:
 ```python
 python main.py --test
 ```
-The model I trained has achieved 96% accuracy in the test set.
+The model I trained has achieved 95.38% accuracy in the test set.
 ## Test any single sentence
 ```python
 python main.py --test_single
