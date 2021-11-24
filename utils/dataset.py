@@ -1,8 +1,8 @@
 import torch
-# from torchtext.legacy import data
-from torchtext import data
+from torchtext.legacy import data
+# from torchtext import data
 import random
-
+import re
 class dataset:
     def __init__(self, args):
         self.args = args
@@ -55,6 +55,10 @@ class dataset:
     def load_data_single(self, sentence, vocabs):
         self.TEXT.vocab = vocabs['text']
         self.LABEL.vocab = vocabs['label']
+        punctuation = """！，？｡＂＃＄％＆＇()＊＋－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘'‛“”„‟…‧﹏"""
+        re_punctuation = "[{}]+".format(punctuation)
+        sentence = re.sub(re_punctuation, "", sentence)
+        # re.sub("[{}]+".format(punctuation), "", sentence.decode("utf-8"))
         tokenized = list(sentence.split(' '))
         for i in range(self.args.fix_length-len(tokenized)):
             tokenized.append('<pad>')

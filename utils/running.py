@@ -4,6 +4,7 @@ import torch.nn.functional as F
 from torch import nn
 import numpy as np
 import logging
+import heapq
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -12,8 +13,8 @@ class Running:
     def __init__(self, model, args):
         self.args = args
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        self.result = None  # 日志写入
-        self.best_acc = 0.0  # 保存训练期间的最优精度
+        self.result = None
+        self.best_acc = 0.0
         self.best_coef = []
         self.model = model
         # Data parallel
@@ -135,10 +136,11 @@ class Running:
         # Load language name
         language = np.load(self.args.data_path + 'language.npy')
         prediction = self.model(tensor)
-        prediction = prediction.cpu().detach().numpy()
-        # label
-        label = np.argmax(prediction)
+        prediction = self.softmax(prediction.cpu().detach().numpy()[0])
+        # label = np.argmax(prediction)
+        p = heapq.nlargest(self.args.topk, prediction)
+        # Probability
+        label = list(map(list(prediction).index, heapq.nlargest(self.args.topk, list(prediction))))
         lan = language[label]
         # Probability
-        p = self.softmax(prediction)[0][label]
         return lan, p

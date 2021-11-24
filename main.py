@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# coding: utf-8
 import collections
 import os
 import random
@@ -69,7 +71,9 @@ def test_single():
             model.load_state_dict(torch.load(args.model_path, map_location=lambda storage, loc: storage))
             running = Running(model, args)
             language, p = running.predict_single(single_tensor)
-            logger.info("'" + input_sen + "'"+ ' is in %s with a probability %s'% (language, p))
+            for i in range(len(language)):
+
+                print("'" + input_sen + "'"+ ' is in %s with a probability %s'% (language[i], p[i]))
 
 if __name__ == '__main__':
     # set random seed
@@ -83,3 +87,4 @@ if __name__ == '__main__':
         test()
     if args.test_single:
         test_single()
+    test_single()
