@@ -8,7 +8,7 @@ This is a project on language detection.
 ## Model
 The model is based on the TextCNN [<sup>[1]</sup>](#refer-anchor-1)[<sup>[2]</sup>](#refer-anchor-2).
 <div align="center">
-<img src="https://i.loli.net/2021/11/22/JhUq6nzjiFXItos.png" height="800" width="650" >
+<img src="https://i.loli.net/2021/11/22/JhUq6nzjiFXItos.png" height="600" width="480" >
  </div>
  
 ## Requirements
@@ -40,7 +40,7 @@ You can use test_process.csv to test the ability of the model you have trained:
 ```python
 python main.py --test
 ```
-The model I trained has achieved 96% accuracy in the test set.
+The model I trained has achieved 95.38% accuracy in the test set.
 ## Test any single sentence
 ```python
 python main.py --test_single
