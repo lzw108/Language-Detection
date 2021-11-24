@@ -15,6 +15,7 @@ The model is based on the TextCNN [<sup>[1]</sup>](#refer-anchor-1)[<sup>[2]</su
 - python 3.7
 - Pytorch 1.5
 - CUDA (Recommended version >=10.0)
+- torchtext 0.11.0
 ## Getting Started
 ## Data
 We need download [Tatoeba dataset](https://tatoeba.org/eng/downloads) as our train data, which
