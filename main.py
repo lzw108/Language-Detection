@@ -87,4 +87,3 @@ if __name__ == '__main__':
         test()
     if args.test_single:
         test_single()
-    test_single()
