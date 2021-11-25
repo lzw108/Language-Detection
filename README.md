@@ -35,7 +35,7 @@ Before training, the parameters can be adjusted in args.py. Then the model can b
 ```python
 python main.py --train 
 ```
-The model will be got in the model Directory and a vocab in the data directory,
+The model will be got in the model Directory and a vocab in the data directory. Training will cost a while, so we can use directly use the vocabulary in the data directory and the model in the model directory.
 ## Test
 The ability of the model we have trained can be tested by using test_process.csv:
 ```python
