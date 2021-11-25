@@ -26,22 +26,22 @@ bunzip2 sentences.tar.bz2
 tar xvf sentences.tar
 ```
 # Train
-First, we should process data:
+First, the data should be processed:
 ```python
 python main.py --data_process 
 ```
 It will first call data_process.py to split data to train_process.csv and test_process.csv.
-Before training, you can adjust the parameters in args.py. Then you can train the model:
+Before training, the parameters can be adjusted in args.py. Then the model can be trained as follow:
 ```python
 python main.py --train 
 ```
-You will get the model in the model Directory and a vocab in the data directory,
+The model will be got in the model Directory and a vocab in the data directory,
 ## Test
-You can use test_process.csv to test the ability of the model you have trained:
+The ability of the model we have trained can be tested by using test_process.csv:
 ```python
 python main.py --test
 ```
-The model I trained has achieved 95.38% accuracy in the test set.
+The model I trained has achieved 95.38% accuracy in the test set (10000 samples are randomly selected by default).
 ## Test any single sentence
 ```python
 python main.py --test_single
