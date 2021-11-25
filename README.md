@@ -49,7 +49,7 @@ python main.py --test_single
 Then you can follow the prompts to enter a single sentence and enjoy it.
 
 ## Improvement
-At present, it only randomly initializes the word vector. In the future, you can try to load the word vector trained by FastText [<sup>[3]</sup>](#refer-anchor-3)[<sup>[4]</sup>](#refer-anchor-4)or rewrite FastText.
+At present, it only randomly initializes the word vector. In the future, the word vector trained by FastText [<sup>[3]</sup>](#refer-anchor-3)[<sup>[4]</sup>](#refer-anchor-4) can be used in this model.
 
 - [1] [Chen Y. Convolutional neural network for sentence classification.University of Waterloo, 2015.](https://arxiv.org/pdf/1408.5882.pdf)
 - [2] [Zhang Y, Wallace B. A sensitivity analysis of (and practitioners' guide to) convolutional neural networks for sentence classification. arXiv preprint arXiv:1510.03820, 2015.](https://arxiv.org/pdf/1510.03820.pdf)
