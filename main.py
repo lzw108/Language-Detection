@@ -36,7 +36,7 @@ def train():
     train_data_path = os.path.join(data_path, 'train_process.csv')
     train_loader,valid_loader,len_vocab = Dataset.load_data(train_data_path) # 这块检查下TEXT
     # Model initialization
-    model = TextCNN(args.emb_dim, [args.kernel_size1, args.kernel_size2, args.kernel_size3, args.kernel_size4], args.kernel_num, len_vocab).to(device)
+    model = TextCNN(args.emb_dim, [args.kernel_size1, args.kernel_size2, args.kernel_size3], args.kernel_num, len_vocab).to(device)
     # Training
     for epoch in range(args.epochs):
         running = Running(model, args)
@@ -51,7 +51,7 @@ def test():
     Dataset = dataset(args)
     test_loader,temp,len_vocab = Dataset.load_data_test(test_data_path, vocabs)
     # Load model
-    model = TextCNN(args.emb_dim, [args.kernel_size1, args.kernel_size2, args.kernel_size3, args.kernel_size4], args.kernel_num, len_vocab).to(device)
+    model = TextCNN(args.emb_dim, [args.kernel_size1, args.kernel_size2, args.kernel_size3], args.kernel_num, len_vocab).to(device)
     model.load_state_dict(torch.load(args.model_path, map_location=lambda storage, loc: storage))
     # test
     running = Running(model, args)
@@ -67,7 +67,7 @@ def test_single():
             vocabs = torch.load('./data/vocabs')
             Dataset = dataset(args)
             single_tensor,temp,len_vocab = Dataset.load_data_single(input_sen, vocabs)
-            model = TextCNN(args.emb_dim, [args.kernel_size1, args.kernel_size2, args.kernel_size3, args.kernel_size4], args.kernel_num, len_vocab).to(device)
+            model = TextCNN(args.emb_dim, [args.kernel_size1, args.kernel_size2, args.kernel_size3], args.kernel_num, len_vocab).to(device)
             model.load_state_dict(torch.load(args.model_path, map_location=lambda storage, loc: storage))
             running = Running(model, args)
             language, p = running.predict_single(single_tensor)
@@ -87,3 +87,4 @@ if __name__ == '__main__':
         test()
     if args.test_single:
         test_single()
+    # train()
