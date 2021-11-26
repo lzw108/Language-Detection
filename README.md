@@ -41,7 +41,7 @@ The ability of the model we have trained can be tested by using test_process.csv
 ```python
 python main.py --test
 ```
-The model I trained has achieved 95.38% accuracy in the test set (10000 samples are randomly selected by default).
+The model I trained has achieved 95.93% accuracy in the test set (10000 samples are randomly selected by default).
 ## Test any single sentence
 ```python
 python main.py --test_single
