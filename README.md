@@ -53,5 +53,5 @@ At present, it only randomly initializes the word vector. In the future, the wor
 
 - [1] [Chen Y. Convolutional neural network for sentence classification.University of Waterloo, 2015.](https://arxiv.org/pdf/1408.5882.pdf)
 - [2] [Zhang Y, Wallace B. A sensitivity analysis of (and practitioners' guide to) convolutional neural networks for sentence classification. arXiv preprint arXiv:1510.03820, 2015.](https://arxiv.org/pdf/1510.03820.pdf)
-- [2] [Joulin A, Grave E, Bojanowski P, et al. Bag of tricks for efficient text classification[J]. arXiv preprint arXiv:1607.01759, 2016.](https://arxiv.org/abs/1607.01759)
-- [3] [Joulin A, Grave E, Bojanowski P, et al. Bag of tricks for efficient text classification. arXiv preprint arXiv:1607.01759, 2016.](https://arxiv.org/abs/1612.03651)
+- [3] [Joulin A, Grave E, Bojanowski P, et al. Bag of tricks for efficient text classification[J]. arXiv preprint arXiv:1607.01759, 2016.](https://arxiv.org/abs/1607.01759)
+- [4] [Joulin A, Grave E, Bojanowski P, et al. Bag of tricks for efficient text classification. arXiv preprint arXiv:1607.01759, 2016.](https://arxiv.org/abs/1612.03651)
